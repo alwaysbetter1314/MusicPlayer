@@ -66,7 +66,7 @@ export default {
     expand_list(listId) {
       this.show = true;
       let url =
-        "http://musicapi.leanapp.cn/playlist/detail?id=" + listId.toString();
+        "https://musicapi.leanapp.cn/playlist/detail?id=" + listId.toString();
       this.$axios
         .get(url)
         .then(res => {
@@ -80,7 +80,7 @@ export default {
     // get list
     getList() {
       let url =
-        "http://musicapi.leanapp.cn/user/playlist?uid=" + this.netease_id;
+        "https://musicapi.leanapp.cn/user/playlist?uid=" + this.netease_id;
       this.$axios
         .get(url)
         .then(res => {
