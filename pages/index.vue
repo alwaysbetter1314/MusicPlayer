@@ -98,7 +98,7 @@ export default {
     },
     // get music
     getMusic() {
-      let url = "http://musicapi.leanapp.cn/search?keywords=" + this.value;
+      let url = "https://musicapi.leanapp.cn/search?keywords=" + this.value;
       this.$axios
         .get(url)
         .then(res => {
