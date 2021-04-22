@@ -1,15 +1,12 @@
 <template>
   <div>
-    <router-view />
-    <!-- tabar作为公共布局 -->
-    <van-tabbar route>
-      <van-tabbar-item replace to="/" icon="home-o">
-        主页
-      </van-tabbar-item>
-      <van-tabbar-item replace to="/musicLists" icon="orders-o">
-        歌单
-      </van-tabbar-item>
-    </van-tabbar>
+    <div class="navbar">
+      <Logo />
+      <h1 class="title">
+        nuxt-music
+      </h1>
+    </div>
+    <nuxt />
   </div>
 </template>
 
@@ -26,11 +23,26 @@ html {
   box-sizing: border-box;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 20px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
 }
 
 .button--green {

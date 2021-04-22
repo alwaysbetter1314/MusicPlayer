@@ -1,5 +1,15 @@
 # nuxt-music
 
+## changelog
+### v1
+实现播放
+### v2
+实现netease歌单点击播放
+### v3 
+实现 下一曲 歌单播放。
+
+
+
 ## Build Setup
 
 ```bash

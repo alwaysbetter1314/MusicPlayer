@@ -21,11 +21,13 @@
     <van-overlay :show="show" @click="show = false">
       <div class="wrapper" @click.stop>
         <van-cell-group>
-          <van-cell 
-          v-for="(item,i) in itemInList"
-          :key="i"
-          :title="item.name" 
-          :value="item.id" />
+          <van-cell
+            v-for="(item, i) in itemInList"
+            :key="i"
+            :title="item.name"
+            :value="item.id"
+            @click="click_play(item.id)"
+          />
         </van-cell-group>
       </div>
     </van-overlay>
@@ -34,28 +36,42 @@
 
 <script>
 export default {
-  name: "musicLists",
+  name: "orderLists",
+  props: {
+    fatherMethod: {
+      type: Function,
+      default: null
+    }
+  },
   data() {
     return {
       netease_id: "337139132",
       playlist: [],
       show: false,
-      itemInList:[]
+      itemInList: []
     };
   },
   mounted() {
     this.getList();
   },
   methods: {
-    //enpand
+    // 点击遮罩层播放
+    click_play(id) {
+      if (this.fatherMethod) {
+        console.log("click child");
+        this.fatherMethod(id)
+      }
+    },
+    //expand
     expand_list(listId) {
       this.show = true;
-      let url= "http://musicapi.leanapp.cn/playlist/detail?id="+ listId.toString()
+      let url =
+        "http://musicapi.leanapp.cn/playlist/detail?id=" + listId.toString();
       this.$axios
         .get(url)
         .then(res => {
-        console.log(res.data)
-          this.itemInList = res.data.playlist.tracks
+          console.log(res.data);
+          this.itemInList = res.data.playlist.tracks;
         })
         .catch(err => {
           console.error(err);
