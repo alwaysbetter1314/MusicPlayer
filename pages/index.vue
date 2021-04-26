@@ -45,7 +45,7 @@
 
 <script>
 import songs from "../assets/songs.json";
-import orderLists from "@/components/index/tabs-orderlist.vue";
+import orderLists from "./orderList/orderList.vue";
 import MyPage from "./my/my.vue"
 export default {
   components: {
