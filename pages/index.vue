@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <van-tabs v-model="tabs_active" class="width100">
+    <van-tabs v-model="tabs_active" class="width-adapt">
       <van-tab title="主页">
+        <van-divider />
         <div>
           <div class="search">
             <van-field v-model="value" label="歌名:" placeholder="歌名" />
@@ -23,18 +24,20 @@
       <van-tab title="歌单">
         <orderLists :fatherMethod="playMusic" />
       </van-tab>
-      <van-tab title="我的">内容 3</van-tab>
+      <van-tab title="我的">
+        <MyPage />
+      </van-tab>
     </van-tabs>
 
     <!--播放器-->
     <span class="lb-ico toBottom" @click="handlePlayAudio">
-      <img
+      <!-- <img
         :src="
           isPlay
             ? 'https://static.xfanread.com/readingDay2020/quickspot/bf@2x.png'
             : 'https://static.xfanread.com/readingDay2020/quickspot/jy@2x.png'
         "
-      />
+      /> -->
       <audio ref="audio" :src="audio_src" @ended="audioEnd" controls></audio>
     </span>
   </div>
@@ -43,9 +46,11 @@
 <script>
 import songs from "../assets/songs.json";
 import orderLists from "@/components/index/tabs-orderlist.vue";
+import MyPage from "./my/my.vue"
 export default {
   components: {
-    orderLists
+    orderLists,
+    MyPage
   },
   data() {
     return {
@@ -114,16 +119,19 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .container {
-  margin: 0 auto;
+  max-width:677px;
+  margin: 0px auto;
+  padding: 25px;
+  /* margin: 0 auto; */
   min-height: 100vh;
   display: flex;
   justify-content: top;
   align-items: top;
   text-align: top;
 }
-.width100 {
+.width-adapt {
   width: 100%;
 }
 
@@ -140,10 +148,11 @@ export default {
 }
 
 .toBottom {
-  left: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 1;
+  max-width:700px;
+  margin: 0px auto;
 }
 </style>

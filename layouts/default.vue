@@ -6,12 +6,13 @@
         nuxt-music
       </h1>
     </div>
+    <!-- <van-divider /> -->
     <nuxt />
   </div>
 </template>
 
 <style>
-html {
+/* html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -21,12 +22,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-}
+}*/
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items:center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .title {
@@ -39,7 +42,7 @@ html {
   letter-spacing: 1px;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -72,5 +75,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>
