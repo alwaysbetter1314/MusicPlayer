@@ -47,6 +47,7 @@
 import songs from "../assets/songs.json";
 import orderLists from "./orderList/orderList.vue";
 import MyPage from "./my/my.vue"
+
 export default {
   components: {
     orderLists,
@@ -103,7 +104,7 @@ export default {
     },
     // get music
     getMusic() {
-      let url = "https://musicapi.leanapp.cn/search?keywords=" + this.value;
+      let url = "http://music.eleuu.com/search?keywords=" + this.value;
       this.$axios
         .get(url)
         .then(res => {
