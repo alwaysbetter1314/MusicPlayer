@@ -7,7 +7,7 @@
       desc="描述信息"
       title="商品标题"
       class="goods-card"
-      thumb="https://img01.yzcdn.cn/vant/cat.jpeg"
+      thumb="//img01.yzcdn.cn/vant/cat.jpeg"
     />
     <template #right>
       <van-button square text="删除" type="danger" class="delete-button" />

@@ -34,8 +34,8 @@
       <!-- <img
         :src="
           isPlay
-            ? 'https://static.xfanread.com/readingDay2020/quickspot/bf@2x.png'
-            : 'https://static.xfanread.com/readingDay2020/quickspot/jy@2x.png'
+            ? '//static.xfanread.com/readingDay2020/quickspot/bf@2x.png'
+            : '//static.xfanread.com/readingDay2020/quickspot/jy@2x.png'
         "
       /> -->
       <audio ref="audio" :src="audio_src" @ended="audioEnd" controls></audio>
@@ -63,7 +63,7 @@ export default {
       isPlay: false,
       value: "前前世世",
       song_list: songs,
-      audio_src: "https://music.163.com/song/media/outer/url?id=1315635196"
+      audio_src: "//music.163.com/song/media/outer/url?id=1315635196"
     };
   },
   mounted(){
@@ -90,7 +90,7 @@ export default {
     //play music in lists
     playMusic(id) {
       console.log("click");
-      this.audio_src = "https://music.163.com/song/media/outer/url?id=" + id;
+      this.audio_src = "//music.163.com/song/media/outer/url?id=" + id;
       this.isPlay = true;
       this.$refs.audio.pause();
       this.$refs.audio.currentTime = 0.0;
@@ -104,7 +104,7 @@ export default {
     },
     // get music
     getMusic() {
-      let url = "http://music.eleuu.com/search?keywords=" + this.value;
+      let url = "//music.eleuu.com/search?keywords=" + this.value;
       this.$axios
         .get(url)
         .then(res => {
