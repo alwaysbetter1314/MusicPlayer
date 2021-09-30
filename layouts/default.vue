@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div class="navbar">
-      <Logo />
-      <h1 class="title">
-        nuxt-music
-      </h1>
-    </div>
-    <!-- <van-divider /> -->
+    <van-notice-bar
+      left-icon="volume-o"
+      text="请使用手机浏览器进行播放,电脑chrome会拦截http请求"
+    />
     <nuxt />
   </div>
 </template>

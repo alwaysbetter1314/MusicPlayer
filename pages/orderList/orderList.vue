@@ -67,7 +67,7 @@ export default {
     expand_list(listId) {
       this.show = true;
       let url =
-        "//music.eleuu.com/playlist/detail?id=" + listId.toString();
+        "http://music.eleuu.com/playlist/detail?id=" + listId.toString();
       this.$axios
         .get(url)
         .then(res => {
@@ -81,7 +81,7 @@ export default {
     // get list
     getList() {
       let url =
-        "//music.eleuu.com/user/playlist?uid=" + this.netease_id;
+        "http://music.eleuu.com/user/playlist?uid=" + this.netease_id;
       this.$axios
         .get(url)
         .then(res => {

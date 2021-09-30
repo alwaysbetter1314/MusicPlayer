@@ -63,7 +63,7 @@ export default {
       isPlay: false,
       value: "前前世世",
       song_list: songs,
-      audio_src: "//music.163.com/song/media/outer/url?id=1315635196"
+      audio_src: "http://music.163.com/song/media/outer/url?id=1315635196"
     };
   },
   mounted(){
@@ -90,7 +90,7 @@ export default {
     //play music in lists
     playMusic(id) {
       console.log("click");
-      this.audio_src = "//music.163.com/song/media/outer/url?id=" + id;
+      this.audio_src = "http://music.163.com/song/media/outer/url?id=" + id;
       this.isPlay = true;
       this.$refs.audio.pause();
       this.$refs.audio.currentTime = 0.0;
@@ -104,7 +104,7 @@ export default {
     },
     // get music
     getMusic() {
-      let url = "//music.eleuu.com/search?keywords=" + this.value;
+      let url = "http://music.eleuu.com/search?keywords=" + this.value;
       this.$axios
         .get(url)
         .then(res => {
